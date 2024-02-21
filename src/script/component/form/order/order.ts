@@ -46,6 +46,7 @@ export class OrderFormComponent extends Component {
 
     created() {
         this.format.size = Number(0).toFixed(this.object.product.baseMinSize.length-2);
+        this.trade.type = 1;
         this.trade.productId = this.productId;
     }
 

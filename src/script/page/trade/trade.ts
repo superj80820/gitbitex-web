@@ -60,7 +60,7 @@ export class TradePage extends Page {
 
     subscribe() {
         StoreService.Trade.subscribe([this.productId], [
-            SubscribeChannel.CANDLES,
+            // SubscribeChannel.CANDLES,
             SubscribeChannel.MATCH,
             SubscribeChannel.LEVEL2,
             SubscribeChannel.ORDER,
@@ -69,7 +69,7 @@ export class TradePage extends Page {
 
     unsubscribe() {
         StoreService.Trade.unsubscribe([this.productId], [
-            SubscribeChannel.CANDLES,
+            // SubscribeChannel.CANDLES,
             SubscribeChannel.MATCH,
             SubscribeChannel.LEVEL2,
             SubscribeChannel.ORDER,

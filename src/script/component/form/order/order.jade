@@ -31,7 +31,7 @@ div.form-order
             span(:class='{active: trade.side==0}', @click='tradeSideChange(0)') BUY
             span(:class='{active: trade.side==1}', @click='tradeSideChange(1)') SELL
         div.trade-tabbar
-            span(:class='{active: trade.type==0}', @click='tradeTypeChange(0)') MARKET
+            //- span(:class='{active: trade.type==0}', @click='tradeTypeChange(0)') MARKET
             span(:class='{active: trade.type==1}', @click='tradeTypeChange(1)') LIMIT
         div.input-group(v-show='trade.side==1 || (trade.side==0 && trade.type==1)')
             label Amount

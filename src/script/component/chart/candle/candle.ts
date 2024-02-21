@@ -50,38 +50,46 @@ export class CandleChartComponent extends Component {
 
     created() {
         this.chartTypeOptions = ['candle', 'line'];
-        this.rangeNameOptions = ['1m', '5m', '15m', '30m', '1h', '6h', '1d'];
+        this.rangeNameOptions = [
+            '1m',
+            // '5m',
+            // '15m',
+            // '30m',
+            '1h',
+            // '6h',
+            '1d'
+        ];
         this.ranges = [
             {
                 type: 'minute',
                 count: 1,
                 granularity: 60
             },
-            {
-                type: 'minute',
-                count: 5,
-                granularity: 60 * 5
-            },
-            {
-                type: 'minute',
-                count: 15,
-                granularity: 60 * 15
-            },
-            {
-                type: 'minute',
-                count: 30,
-                granularity: 60 * 30
-            },
+            // {
+            //     type: 'minute',
+            //     count: 5,
+            //     granularity: 60 * 5
+            // },
+            // {
+            //     type: 'minute',
+            //     count: 15,
+            //     granularity: 60 * 15
+            // },
+            // {
+            //     type: 'minute',
+            //     count: 30,
+            //     granularity: 60 * 30
+            // },
             {
                 type: 'hour',
                 count: 1,
                 granularity: 60 * 60
             },
-            {
-                type: 'hour',
-                count: 6,
-                granularity: 60 * 60 * 6
-            },
+            // {
+            //     type: 'hour',
+            //     count: 6,
+            //     granularity: 60 * 60 * 6
+            // },
             {
                 type: 'day',
                 count: 1,

@@ -40,7 +40,11 @@ export class App {
     private static loadData(callback: () => void) {
 
         StoreService.Trade.loadProducts(() => {
-            WebSocketService.Instance.connect(Constant.SOCKET_SERVER, () => {
+            const protocol = window.location.protocol === "https" ? "wss" : "ws";
+            const url = window.location.port === "" ?
+                `${protocol}://${window.location.hostname}${Constant.SOCKET_SERVER}` :
+                `${protocol}://${window.location.hostname}:${window.location.port}${Constant.SOCKET_SERVER}`;
+            WebSocketService.Instance.connect(url, () => {
                 StoreService.Trade.subscribeAllTicker();
                 callback && callback();
             }, (msg: any) => {

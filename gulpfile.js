@@ -26,7 +26,7 @@ options = minimist(process.argv.slice(2));
 isProduction = options.env == 'prod';
 buildPath = './build/web';
 routeBase = '/';
-apiProxy = 'https://gitbitex.com:8080/';
+apiProxy = 'http://localhost:9090';
 
 function createTask(task, taskName) {
     if (task.type == 'concat') {
@@ -150,6 +150,11 @@ gulp.task('browser-sync', function () {
                 target: apiProxy,
                 changeOrigin: true,
                 logLevel: 'debug',
+            }),proxy('/ws', {
+                target: apiProxy,
+                changeOrigin: true,
+                logLevel: 'debug',
+                ws: true,
             }), history({
                 rewrites: [
                     {

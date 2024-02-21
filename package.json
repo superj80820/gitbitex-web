@@ -10,7 +10,7 @@
     "awesome-typescript-loader": "^3.5.0",
     "browser-sync": "^2.26.7",
     "connect-history-api-fallback": "^1.5.0",
-    "del": "*",
+    "del": "^6.1.1",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.3.2",

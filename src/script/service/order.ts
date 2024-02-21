@@ -43,7 +43,7 @@ export class OrderService extends Service {
                 return {
                     after: response.headers['gbe-after'],
                     before: response.headers['gbe-before'],
-                    items: response.data,
+                    items: response.data.items,
                 };
         });
     }

@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { Helper } from './../../../helper';
 import { Constant } from './../../../constant';
 import { App } from './../../../app';
 import { StoreService } from './../../../store/service';
@@ -42,6 +43,11 @@ export class TradeHeaderComponent extends Component {
 
     get userInfo() {
         return StoreService.Account.userInfo;
+    }
+
+    get latestPrice() {
+        const history = StoreService.Trade.getObject(this.productId).tradeHistory;
+        return history.length > 0 ? history[0].price : null;
     }
 
     get product() {

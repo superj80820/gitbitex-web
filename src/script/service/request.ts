@@ -46,7 +46,11 @@ export class Request {
                     return response.data;
                 }
             }
-            else if (response.status == 401) {
+            else if (
+                response.status == 401
+                && window.location.pathname !== '/account/signin'
+                && response.body.code === 3
+            ) {
                 window.location.href = '/account/signin';
             }
             else {

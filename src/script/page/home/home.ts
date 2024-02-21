@@ -21,6 +21,7 @@ export class HomePage extends Page {
         super.mounted();
         this.pageLoadingHide();
         this.setTitle('Gitbitex | Digital Asset Exchange');
+        this.$router.push('/trade/BTC-USDT');
     }
 
 }

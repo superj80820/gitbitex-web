@@ -58,7 +58,7 @@ export class AccountSigninPage extends Page {
                     this.$router.push(this.$route.query.ref);
                 }
                 else {
-                    this.$router.push(`/account/profile`);
+                    this.$router.push('/trade/BTC-USDT');
                 }
             })
         }).catch((res: any) => {

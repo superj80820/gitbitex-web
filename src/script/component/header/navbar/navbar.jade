@@ -6,10 +6,10 @@ div.header.header-navbar
         div.navbar
             li(:class='{active: active==2}')
                 router-link(to='/trade/BTC-USDT') Trade
-            li(:class='{active: active==0}')
-                router-link(to='/account/wallet') My Wallets
-            li(:class='{active: active==1}')
-                router-link(to='/account/order') My Orders
+            //- li(:class='{active: active==0}')
+            //-     router-link(to='/account/wallet') My Wallets
+            //- li(:class='{active: active==1}')
+            //-     router-link(to='/account/order') My Orders
             li(v-if='!logined')
                 a(@click='toSign') Sign in
             li.user(@click.stop='dropdownToggle', v-if='logined')

@@ -32,7 +32,11 @@ export class AccountService extends Service {
     }
 
     current() {
-        return this.request.get('/users/self', { headers : {'HideAuthError': true} });
+        const currentAccessToken = (window as any).localStorage.getItem('access-token');
+        if currentAccessToken {
+            return this.request.get('/users/self', { headers : {'HideAuthError': true} });
+        }
+        return Promise.reject(new Error("no login"))
     }
 
     saveToken(token: string) {
